@@ -1,0 +1,30 @@
+.container {
+  padding: 16px;
+
+  h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: #3880ff;
+  }
+
+  ion-card {
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  ion-card-title {
+    font-size: 1.1rem;
+    color: #222;
+  }
+
+  ion-card-content p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+  }
+
+  ion-button {
+    margin-top: 24px;
+  }
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Intereses</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="intereses-title">
+    <h2>Selecciona tus intereses</h2>
+    <p>Puedes seleccionar o quitar intereses según tus preferencias.</p>
+  </div>
+
+  <div class="interes-chips">
+
+    <div class="selected">
+      <ion-chip *ngFor="let interes of interesesSeleccionados" 
+                [color]="interes.color"
+                class="selected-chip"
+                (click)="toggleInteres(interes)">
+        {{ interes.nombre }}
+      </ion-chip>
+    </div>
+
+
+    <div class="unselected">
+      <ion-chip *ngFor="let interes of interesesNoSeleccionados" 
+                [color]="interes.color"
+                (click)="toggleInteres(interes)">
+        {{ interes.nombre }}
+      </ion-chip>
+    </div>
+  </div>
+</ion-content>

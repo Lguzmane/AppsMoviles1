@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Panoramas Cercanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="secondary">
+      <ion-title size="large">Panoramas Cercanos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <p>Explora eventos y actividades cerca de ti.</p>
+
+    <ion-card *ngFor="let panorama of panoramas">
+      <ion-card-header>
+        <ion-card-title>{{ panorama.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ panorama.descripcion }}</p>
+        <ion-button expand="block" color="primary" (click)="toggleGrupos(panorama)">
+          {{ panorama.mostrarGrupos ? 'Cancelar' : 'Agregar a Grupo' }}
+        </ion-button>
+
+        <div *ngIf="panorama.mostrarGrupos" class="grupo-opciones">
+          <p>Elige un grupo:</p>
+          <ion-button size="small" color="medium"
+            *ngFor="let grupo of grupos"
+            (click)="agregarAGrupo(panorama, grupo)">
+            {{ grupo }}
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

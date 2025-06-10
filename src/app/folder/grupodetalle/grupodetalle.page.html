@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/grupos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ grupo?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">{{ grupo?.nombre }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <h2>Detalles del Grupo</h2>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Integrantes</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ grupo?.miembros }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Panoramas Sugeridos</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Aquí se mostrarán los panoramas recomendados según los intereses comunes y días libres.</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" color="secondary" routerLink="/folder/crearpanorama">
+      Crear Nuevo Panorama
+    </ion-button>
+  </div>
+</ion-content>

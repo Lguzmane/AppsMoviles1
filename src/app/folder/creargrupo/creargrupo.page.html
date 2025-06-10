@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Grupo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Grupo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Nombre del Grupo</ion-label>
+        <ion-input type="text" [(ngModel)]="grupo.nombre" placeholder="Ingresa el nombre"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="grupo.contactos.length > 0">
+    <ion-card-header>
+      <ion-card-title>Contactos Seleccionados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip *ngFor="let contacto of grupo.contactos" color="secondary" outline>
+        <ion-label>{{ contacto }}</ion-label>
+        <ion-icon name="close-circle" (click)="eliminarContacto(contacto)"></ion-icon>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" fill="solid" color="secondary" (click)="abrirModalContactos()">
+    <ion-icon name="person-add-outline" slot="start"></ion-icon>
+    Seleccionar Contactos
+  </ion-button>
+
+  <ion-button expand="block" fill="solid" color="primary" (click)="guardarGrupo()">
+    <ion-icon name="save-outline" slot="start"></ion-icon>
+    Guardar Grupo
+  </ion-button>
+
+  <!-- Modal para seleccionar contactos -->
+  <ion-modal [isOpen]="mostrarModal">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Seleccionar Contactos</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cerrarModal()">
+            <ion-icon name="close"></ion-icon> Cerrar
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <ion-item *ngFor="let contacto of contactosSimulados">
+          <ion-label>{{ contacto }}</ion-label>
+          <ion-button fill="outline" slot="end" (click)="agregarContacto(contacto)">
+            <ion-icon name="add"></ion-icon> Agregar
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-modal>
+</ion-content>

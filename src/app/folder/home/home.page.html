@@ -1,0 +1,48 @@
+<ion-header> 
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>¡Bienvenido a PlansApp!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="welcome">
+    <h2>¡Hola, Usuario!</h2>
+    <p>Descubre panoramas y compártelos con tus grupos.</p>
+  </div>
+
+  <div class="action-buttons">
+    <ion-button routerLink="/folder/agenda">
+      📅 Gestionar Agenda
+    </ion-button>
+    <ion-button routerLink="/folder/intereses">
+      🖌️ Editar Intereses
+    </ion-button>
+    <ion-button routerLink="/folder/creargrupo">
+      👥 Crear Grupo
+    </ion-button>
+  </div>
+
+  <div class="section">
+    <h3>Panoramas Destacados</h3>
+    <mat-card *ngFor="let panorama of panoramas" class="panorama-card">
+      <img [src]="panorama.imagen" alt="Panorama" />
+      <mat-card-header>
+        <mat-card-title>{{ panorama.nombre }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="interes-chips">
+          <ion-chip *ngFor="let interes of panorama.intereses" color="medium">
+            {{ interes }}
+          </ion-chip>
+        </div>
+        <button mat-raised-button class="detalle-btn" [routerLink]="['/folder/panoramas', panorama.id]">
+  Ver Detalle
+</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</ion-content>
+

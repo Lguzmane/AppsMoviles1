@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi Agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="agenda-title">
+    <h2>Marca tus días y horarios libres</h2>
+    <p>Selecciona un día para marcar tu disponibilidad.</p>
+  </div>
+
+  <div class="resumen">
+    <h4>Días Libres</h4>
+    <div class="resumen-dias">
+      <ion-chip color="success" *ngFor="let dia of diasLibres">
+        {{ dia.date | date:'dd/MM' }} ({{ dia.horario }})
+      </ion-chip>
+    </div>
+  </div>
+
+  <div class="calendar-header">
+    <div *ngFor="let dia of diasSemana">{{ dia }}</div>
+  </div>
+
+  <div class="calendar-grid">
+    <div 
+      *ngFor="let day of daysInMonth" 
+      [class.selected]="day.selected"
+      (click)="toggleDay(day)">
+      {{ day.date.getDate() }}
+    </div>
+  </div>
+
+  <div *ngIf="selectedDay" class="horarios">
+    <h4>Selecciona tu horario para el {{ selectedDay.date | date:'dd/MM/yyyy' }}</h4>
+    <ion-radio-group [(ngModel)]="selectedDay.horario">
+      <ion-item *ngFor="let horario of horarios">
+        <ion-label>{{ horario }}</ion-label>
+        <ion-radio slot="start" [value]="horario"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <ion-button expand="full" color="secondary" (click)="guardarHorario()">Guardar Horario</ion-button>
+  </div>
+
+  <ion-button expand="full" color="primary" (click)="guardarAgenda()">Guardar Agenda y Volver</ion-button>
+</ion-content>

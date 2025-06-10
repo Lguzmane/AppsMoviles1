@@ -1,0 +1,41 @@
+.container {
+  padding: 16px;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #3880ff;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 24px;
+    color: #666;
+  }
+
+  mat-card {
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+
+  mat-card-header {
+    background-color: #f0f0f0;
+    padding: 8px;
+  }
+
+  mat-card-title {
+    color: #3f51b5;
+    font-size: 1.3rem;
+  }
+
+  mat-card-subtitle {
+    font-size: 0.9rem;
+    color: #757575;
+  }
+
+  mat-card-content {
+    padding: 8px;
+  }
+}

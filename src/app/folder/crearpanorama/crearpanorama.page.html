@@ -1,0 +1,55 @@
+<ion-header [translucent]="true"> 
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/folder/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Panorama</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form (ngSubmit)="guardarPanorama()">
+    <ion-item>
+      <ion-label position="stacked">Nombre del Panorama</ion-label>
+      <ion-input [(ngModel)]="panorama.nombre" name="nombre" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha y Hora</ion-label>
+      <ion-datetime
+        display-format="DD/MM/YYYY HH:mm"
+        [(ngModel)]="panorama.fechaHora"
+        name="fechaHora"
+        required>
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="panorama.descripcion" name="descripcion"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Panorama</ion-label>
+      <ion-select [(ngModel)]="panorama.tipo" name="tipo">
+        <ion-select-option value="privado">Privado (Gratis)</ion-select-option>
+        <ion-select-option value="publico">Público ($5 USD)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item *ngIf="panorama.tipo === 'privado'">
+      <ion-label position="stacked">Agregar Invitados (Máx. 30)</ion-label>
+      <ion-textarea [(ngModel)]="panorama.invitados" name="invitados" placeholder="Ingrese sus contactos"></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label position="stacked">Imagen</ion-label>
+      <input type="file" (change)="onFileSelected($event)">
+    </ion-item>
+
+    <ion-button expand="block" color="success" type="submit">
+      Guardar Panorama
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,115 @@
+.welcome {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.action-buttons ion-button {
+  width: 220px;
+  font-size: 16px;
+  border-radius: 20px;
+  border-color: limegreen;
+  --background: var(--ion-color-light);
+  --color: rgb(16, 21, 92);
+  text-transform: none;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.section h3 {
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--ion-color-tertiary);
+  font-weight: 600;
+}
+
+ion-card {
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+ion-card img {
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.interes-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+ion-card-content .detalle-btn {
+  width: fit-content;
+  align-self: center;
+  font-size: 14px;
+  border-radius: 20px;
+  --background: var(--ion-color-secondary);
+  --color: white;
+  text-transform: none;
+  padding: 6px 20px;
+  margin: 10px auto 0;
+}
+
+
+mat-card {
+  margin: 16px auto;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+mat-card-header {
+  background-color: #f0f0f0;
+  padding: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+mat-card-title {
+  color: #3f51b5;
+  font-size: 1.3rem;
+}
+
+mat-card-content {
+  padding: 8px;
+  font-size: 1rem;
+}
+
+mat-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+}
+
+mat-chip {
+  background-color: #e0e0e0;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+mat-card-content .detalle-btn {
+  display: block;
+  margin: 10px auto 0;
+  background-color: var(--ion-color-secondary);
+  color: white;
+  border-radius: 20px;
+  text-transform: none;
+  font-size: 14px;
+  padding: 6px 20px;
+}

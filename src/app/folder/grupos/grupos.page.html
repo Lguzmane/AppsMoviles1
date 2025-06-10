@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis Grupos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">Mis Grupos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container" [@slideIn]>
+    <h2>¡Bienvenido a tus grupos!</h2>
+    <p>Aquí puedes ver y administrar tus grupos de amigos para compartir panoramas.</p>
+
+    <ion-card *ngFor="let grupo of grupos" (click)="irADetalle(grupo.id)">
+      <ion-card-header>
+        <ion-card-title>{{ grupo.nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{ grupo.miembros }}
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-button expand="block" color="success" routerLink="/folder/creargrupo">
+      Crear Grupo
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,60 @@
+.agenda-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.resumen {
+  margin-bottom: 20px;
+}
+
+.resumen h4 {
+  margin-bottom: 6px;
+  color: var(--ion-color-primary);
+  font-weight: 600;
+}
+
+.resumen-dias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  margin-bottom: 4px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.calendar-grid div {
+  background-color: var(--ion-color-light);
+  border: 1px solid var(--ion-color-medium);
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.calendar-grid div.selected {
+  background-color: var(--ion-color-success);
+  color: white;
+}
+
+.horarios {
+  margin-bottom: 20px;
+}
+
+.horarios h4 {
+  color: var(--ion-color-primary);
+  margin-bottom: 10px;
+}

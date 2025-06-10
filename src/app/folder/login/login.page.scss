@@ -1,0 +1,45 @@
+.login-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  margin: 10px auto;
+  width: 90%;
+  max-width: 400px;
+}
+
+ion-button {
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.create-account {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.create-account a {
+  text-decoration: none;
+  color: #3880ff;
+}
+

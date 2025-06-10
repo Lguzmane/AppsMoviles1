@@ -1,0 +1,63 @@
+.form-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.intereses {
+  margin-top: 20px;
+}
+
+.interes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+ion-chip {
+  cursor: pointer;
+}
+
+ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 56px;
+
+  ion-label {
+    font-weight: 500;
+  }
+
+  ion-select {
+    --padding-start: 12px;
+    --padding-end: 12px;
+    --min-height: 40px;
+    font-size: 16px;
+  }
+
+
+  ion-input[type="date"] {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 16px;
+  }
+}
+
+.intereses {
+  margin-top: 20px;
+
+  h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--ion-color-primary);
+  }
+
+  .interes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+ion-select::after {
+  display: none !important;
+}
